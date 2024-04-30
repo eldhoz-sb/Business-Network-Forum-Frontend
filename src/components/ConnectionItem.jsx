@@ -32,7 +32,7 @@ const ConnectionItem = ({ connections }) => {
 
   const fetchProfiles = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_LOCAL_API_URL}/api/members/profiles`);
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/members/profiles`);
       const allProfiles = response.data;
       const connectionProfiles = allProfiles.filter((profile) =>
         connections.some((connection) => connection.connectionId === profile.id)
@@ -47,7 +47,7 @@ const ConnectionItem = ({ connections }) => {
   const handleCancel = async (profileId) => {
     try {
       // Send DELETE request to cancel connection
-      await axios.delete(`${import.meta.env.VITE_LOCAL_API_URL}/api/members/connections/cancel`, {
+      await axios.delete(`${import.meta.env.VITE_BACKEND_API_URL}/api/members/connections/cancel`, {
         data: {
           memberId: user.id,
           connectionId: profileId,
@@ -65,7 +65,7 @@ const ConnectionItem = ({ connections }) => {
   const handleAcceptRequest = async (connectionId) => {
     try {
       // Send PUT request to accept connection
-      await axios.put(`${import.meta.env.VITE_LOCAL_API_URL}/api/members/connections/accept`, {
+      await axios.put(`${import.meta.env.VITE_BACKEND_API_URL}/api/members/connections/accept`, {
         memberId: user.id,
         connectionId: connectionId,
       });

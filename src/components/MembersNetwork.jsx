@@ -15,7 +15,7 @@ const MembersNetworkList = () => {
         // Wait for 2 seconds before making the request
         await new Promise(resolve => setTimeout(resolve, 1000));
         
-        const response = await axios.get(`${import.meta.env.VITE_LOCAL_API_URL}/api/members/connections/${user.id}`);
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/members/connections/${user.id}`);
         const userConnections = response.data.connections;
         setConnections(userConnections);
         setLoading(false);

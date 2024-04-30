@@ -26,7 +26,7 @@ const MemberProfileList = () => {
 
   const fetchProfiles = useCallback(async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_LOCAL_API_URL}/api/members/profiles`);
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/members/profiles`);
       const allProfiles = response.data;
 
       // Find the profile of the currently logged-in user
@@ -78,7 +78,7 @@ const MemberProfileList = () => {
   const handleConnect = async (connectionId) => {
     try {
       // Send POST request to establish connection
-      await axios.post(`${import.meta.env.VITE_LOCAL_API_URL}/api/members/connections/request`, {
+      await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/api/members/connections/request`, {
         memberId: user.id,
         connectionId,
       });
@@ -93,7 +93,7 @@ const MemberProfileList = () => {
   const handleCancel = async (connectionId) => {
     try {
       // Send DELETE request to cancel connection
-      await axios.delete(`${import.meta.env.VITE_LOCAL_API_URL}/api/members/connections/cancel`, {
+      await axios.delete(`${import.meta.env.VITE_BACKEND_API_URL}/api/members/connections/cancel`, {
         data: {
           memberId: user.id,
           connectionId,
@@ -110,7 +110,7 @@ const MemberProfileList = () => {
   const handleAcceptRequest = async (connectionId) => {
     try {
       // Send PUT request to accept connection
-      await axios.put(`${import.meta.env.VITE_LOCAL_API_URL}/api/members/connections/accept`, {
+      await axios.put(`${import.meta.env.VITE_BACKEND_API_URL}/api/members/connections/accept`, {
         memberId: user.id,
         connectionId: connectionId,
       });

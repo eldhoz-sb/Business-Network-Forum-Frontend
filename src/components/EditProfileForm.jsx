@@ -29,7 +29,7 @@ const EditProfileForm = ({ user, onProfileUpdate }) => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_LOCAL_API_URL}/api/members/profile`, {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/api/members/profile`, {
           headers: {
             Authorization: `Bearer ${window.localStorage.getItem(
               "accessToken"

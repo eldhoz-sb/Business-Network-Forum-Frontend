@@ -63,7 +63,7 @@ const InitialProfileForm = ({ user, onProfileUpdate }) => {
       setIsLoading(true); // Show loading indicator for image upload
 
       const imageUploadResponse = await axios.post(
-        `${import.meta.env.VITE_LOCAL_API_URL}/api/members/upload/photo`,
+        `${import.meta.env.VITE_BACKEND_API_URL}/api/members/upload/photo`,
         formDataImage,
         {
           headers: {
@@ -113,7 +113,7 @@ const InitialProfileForm = ({ user, onProfileUpdate }) => {
       console.log("Sending Profile Data", profileData);
       // Send POST request with profile data as JSON
       const profileResponse = await axios.post(
-        `${import.meta.env.VITE_LOCAL_API_URL}/api/members/profile`,
+        `${import.meta.env.VITE_BACKEND_API_URL}/api/members/profile`,
         profileData,
         {
           headers: {

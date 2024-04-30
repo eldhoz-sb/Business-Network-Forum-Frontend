@@ -4,7 +4,7 @@ import axios from 'axios';
 const useAuth = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
-  const baseUrl = `${import.meta.env.VITE_LOCAL_API_URL}`
+  const baseUrl = `${import.meta.env.VITE_BACKEND_API_URL}`
 
   useEffect(() => {
     const storedAccessToken = window.localStorage.getItem('accessToken');

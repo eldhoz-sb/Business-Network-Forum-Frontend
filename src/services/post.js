@@ -1,7 +1,7 @@
 // services/post.js
 import axios from 'axios';
 
-const API_URL = `${import.meta.env.VITE_LOCAL_API_URL}/api/posts`; // Assuming your API endpoint for posts is '/api/posts'
+const API_URL = `${import.meta.env.VITE_BACKEND_API_URL}/api/posts`; 
 
 
 const getPosts = async () => {
